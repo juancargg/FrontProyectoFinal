@@ -1,6 +1,6 @@
 async function getCategorias() {
     try {
-        const response = await fetch(`http://localhost:1337/api/categorias`);
+        const response = await fetch(`http://localhost:5432/api/categorias`);
         if (!response.ok) {
             const message = `Error: ${response.status}`;
             throw new Error(message);
@@ -22,11 +22,12 @@ function printData(dataJSON) {
         a.href = `seccion.html?id=${categorias.id}`
 
         // a.classList.add("column")
-        // img.classList.add("img-crypto")
+        img.classList.add("img-categorias")
 
-        p.textContent = categorias.symbol
-        img.src = categorias.img
-        price.textContent = `${} `
+        p.textContent = categorias.nombre
+        img.src = categorias.attributes.imagen
+        img.alt = categorias.attributes.nombre
+        // price.textContent = `${}`
 
         a.appendChild(p)
         a.appendChild(img)
@@ -37,3 +38,22 @@ function printData(dataJSON) {
 
 
 getCategorias()
+
+
+
+// function openForm() {
+//     document.getElementById("myForm")
+//         .style.display = "block";
+// }
+
+// function closeForm() {
+//     document.getElementById("myForm")
+//         .style.display = "none";
+// }
+
+// openForm()
+// document.getElementById("añadir").addEventListener("click", BtnAñadir);
+// function BtnAñadir() {
+//     window.open("#")
+// }
+

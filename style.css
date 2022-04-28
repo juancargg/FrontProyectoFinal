@@ -1,0 +1,14 @@
+.img-categorias {
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin: 30px
+}
+
+.main-box {
+    display: flex;
+    align-items: center;
+    max-width: 60%;
+    text-align: center;
+}
