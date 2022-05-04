@@ -39,6 +39,15 @@ function printData(dataJSON) {
 
 getCategorias()
 
+function addNewProduct() {
+    const form = document.getElementById("newProductForm");
+    const formData = new FormData(form)
+    const queryString = new URLSearchParams(formData).toString()
+    console.log(queryString)
+}
+
+
+
 
 
 // function openForm() {
