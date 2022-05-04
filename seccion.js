@@ -25,7 +25,7 @@ function printData(dataJSON) {
         a.href = `seccion.html?id=${id}`
         // a.classList.add("column")
         img.classList.add("img-categorias")
-        div.classList.add("main-box")
+        div.classList.add("lista")
         p.textContent = productos.nombre
         img.src = productos.attributes.img_producto
         img.alt = productos.attributes.nombre
