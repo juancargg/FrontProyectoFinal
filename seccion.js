@@ -4,7 +4,7 @@ const id = urlParams.get("id");
 
 async function getProductos() {
     try {
-        const response = await fetch(`http://localhost:5432/api/productos?filters[$and][0][categoria]=` + id);
+        const response = await fetch(`https://listacris.herokuapp.com/api/productos?filters[$and][0][categoria]=` + id);
         if (!response.ok) {
             const message = `Error: ${response.status}`;
             throw new Error(message);
@@ -28,6 +28,7 @@ function printData(dataJSON) {
         div.classList.add("lista")
         p.textContent = productos.nombre
         img.src = productos.attributes.img_producto
+        console.log(productos)
         img.alt = productos.attributes.nombre
         // price.textContent = `${}`
         a.appendChild(p)

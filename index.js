@@ -1,6 +1,6 @@
 async function getCategorias() {
     try {
-        const response = await fetch(`http://localhost:5432/api/categorias`);
+        const response = await fetch(`https://listacris.herokuapp.com/api/categorias`);
         if (!response.ok) {
             const message = `Error: ${response.status}`;
             throw new Error(message);

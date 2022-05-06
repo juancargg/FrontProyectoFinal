@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 .encabezado {
-    font-family:numans;
+    font-family: numans;
     color: rgb(23, 126, 104);
     background-color: #f3c028;
     text-align: center;
     font-size: 40px;
-    height: 80px;
-    padding-top: 30px;
+    padding: 20px;
     font-weight: bold;
     border-radius: 40px;
 }
+
 .img-categorias {
     height: 150px;
     width: 150px;
@@ -21,45 +21,67 @@
 
 .main-box {
     background-image: url('https://img.freepik.com/free-photo/shopping-cart-bright-yellow-paper_113725-1262.jpg?w=1380');
+    background-position: right;
     border-radius: 50px;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-left: 150px;
-    padding-right: 150px;
     height: 100%;
 }
 
 .input-box {
     color: #f3c028;
     background-color: rgb(23, 126, 104);
-    height: 60px;
     border-radius: 25px;
-    padding-left: 50px;
-    margin-top: 15px;
-    padding-top: 10px;
+    margin: 5px 0px;
+    padding: 10px;
 }
 
 .lista {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr; */
     gap: 0px 0px;
-    justify-content: center;
+    justify-items: center;
 }
 
 .btn-primary {
     font-family: numans;
     color: white;
-	padding: 10px;
-	font-size: 18px;
+    padding: 5px;
+    font-size: 18px;
     border-radius: 50px;
-	width: auto;
-	background: rgb(14, 83, 68);
+    width: auto;
+    background: rgb(14, 83, 68);
     height: 80%;
     margin-left: 100px
 }
+
 .btn-primary:hover {
     background: #f3c028;
     transition: all 0.70s;
     color: rgb(23, 126, 104);
+}
+
+@media (max-width: 640px) {
+    .lista {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width:400px) {
+    .lista {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width:460px) {
+    .btn-primary {
+        font-size: 10px;
+    }
+}
+
+@media (max-width:820px) {
+    .encabezado {
+        font-size: 20px;
+    }
 }

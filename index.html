@@ -8,19 +8,19 @@
     <link rel="stylesheet" href="style.css">
     <title>ListoCris</title>
 </head>
+
 <body>
-    <div class="encabezado">Lista de la compra de Juancar y Cris</div>
+
+  <div class="encabezado">Lista de la compra de Juancar y Cris</div>
 
     <div class="input-box">
         <input placeholder="Buscar🔎" type="search">
-        <button data-target="#addNewProductModal" data-toggle="modal" class= btn-primary id="myForm" type="button" value="Añadir nuevo">Añadir nuevo</button>
-            
+        <button data-target="#addNewProductModal" data-toggle="modal" class= btn-primary id="myForm" type="button" value="Añadir nuevo">Añadir nuevo</button>            
     </div>
 
     <div class="main-box">
-            <ul class= "lista" id="lista">
-
-            </ul>  
+            <div class= "lista" id="lista">
+            </div>  
     </div>
     
     <div class="modal fade" id="addNewProductModal" tabindex="-1" role="dialog" aria-labelledby="addNewProductModalLabel" aria-hidden="true">
@@ -32,44 +32,71 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+
           <div class="modal-body">
             <form id="newProductForm">
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Producto:</label>
                 <input type="text" class="form-control" name="nombre">
               </div>
+
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Precio:</label>
                 <input type="text" class="form-control" name="precio">
               </div>
+
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Cantidad:</label>
                 <input type="text" class="form-control" id="recipient-name">
               </div>
+
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Peso:</label>
                 <input type="text" class="form-control" id="recipient-name">
               </div>
+
               <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Tienda:</label>
-                <input type="text" class="form-control" id="recipient-name">
+                <label for="tiendas" class="col-form-label">Tienda:</label>
+                <select type="text" class="form-control" id="tiendas">
+                    <option> </option>
+                    <option value="Mercadona">Mercadona</option>
+                    <option value="Lidl">Lidl</option>
+                    <option value="Carrefour">Carrefour</option>
+                    <option value="Dia">Día</option>
+                    <option value="Alcampo">Alcampo</option>
+                  </select>
               </div>
+
               <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Categoria:</label>
-                <input type="text" class="form-control" id="recipient-name">
+                <label for="categorias" class="col-form-label">Categoria:</label>
+                <select type="text" class="form-control" id="categorias">
+                  <option> </option>
+                  <option value="Frutas">Frutas</option>
+                  <option value="Verduras">Verduras</option>
+                  <option value="Panes">Panes</option>
+                  <option value="Postres">Postres</option>
+                  <option value="Carne y Pescado">Carne y pescado</option>
+                  <option value="Higiene">Higiene</option>
+                  <option value="Limpieza">Limpieza</option>
+                  <option value="Lácteos">Lácteos</option>
+                  <option value="Menaje">Menaje</option>
+                </select>
               </div>
+
               <div class="form-group">
                 <label for="message-text" class="col-form-label">Detalles:</label>
                 <textarea class="form-control" id="message-text"></textarea>
               </div>
+
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Foto:</label>
                 <input type="text" class="form-control" id="recipient-name" placeholder="URL">
               </div>
             </form>
           </div>
+
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" style="background: red;" data-dismiss="modal">Cancelar</button>
             <button type="button" class="btn btn-primary" onclick="addNewProduct()">Añadir</button>
           </div>
         </div>
