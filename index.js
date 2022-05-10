@@ -39,12 +39,46 @@ function printData(dataJSON) {
 
 getCategorias()
 
-function addNewProduct() {
-    const form = document.getElementById("newProductForm");
-    const formData = new FormData(form)
-    const queryString = new URLSearchParams(formData).toString()
-    console.log(queryString)
+async function addNewProduct() {
+    try {
+        let form = document.getElementById("newProductForm");
+        const formData = new FormData(form)
+
+        const formJSON = Object.fromEntries(formData.entries());
+        const strapiRequest = { data: { ...formJSON } };
+        const bodyRequest = JSON.stringify(strapiRequest, null, 2);
+
+
+        const response = await fetch('https://listacris.herokuapp.com/api/productos', {
+            method: "POST",
+            body: bodyRequest,
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        if (!response.ok) {
+            const message = `Error: ${response.status}`;
+            alert(message);
+            throw new Error(message);
+        }
+
+        const dataResponse = await response.json();
+
+        resetProduct(dataResponse)
+
+    } catch (error) {
+        console.log(error)
+    }
 }
+
+function resetProduct(response) {
+    const nombre = response.data.attributes.nombre;
+    alert(`El producto ${nombre} se ha añadido correctamente`);
+    document.getElementById("newProductForm").reset();
+}
+
+
+
 
 
 
