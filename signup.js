@@ -33,3 +33,4 @@ function doLogin(data) {
     localStorage.setItem("token", data.jwt)
     window.location.href = "index.html"
 }
+
