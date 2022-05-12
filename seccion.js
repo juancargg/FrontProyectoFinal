@@ -9,11 +9,14 @@ async function getProductos() {
             const message = `Error: ${response.status}`;
             throw new Error(message);
         } const serie = await response.json();
+
         printData(serie.data);
     } catch (error) {
         console.log(error)
     }
 }
+
+let productoSeleccionado;
 function printData(dataJSON) {
     '<div class="encabezado"></div>'
     const lista = document.getElementById("lista")
@@ -22,6 +25,14 @@ function printData(dataJSON) {
         const p = document.createElement("p")
         const img = document.createElement("img")
         const div = document.createElement("div")
+        div.onclick = function () {
+            productoSeleccionado = productos;
+            populateModalProduct(event)
+        };
+        div.setAttribute("data-target", "#openModalProduct")
+        div.setAttribute("data-toggle", "modal")
+        div.setAttribute("data-id", productos.id)
+
         a.href = `seccion.html?id=${id}`
         // a.classList.add("column")
         img.classList.add("img-categorias")
@@ -35,7 +46,21 @@ function printData(dataJSON) {
         div.appendChild(a)
         lista.appendChild(div)
     }
+
 }
+
+function populateModalProduct(event) {
+    event.preventDefault();
+    console.log(productoSeleccionado)
+    document.getElementById("titleProduct").innerHTML = productoSeleccionado.attributes.nombre;
+    document.getElementById("img-product").src = productoSeleccionado.attributes.img_producto;
+    document.getElementById("precio").innerHTML = productoSeleccionado.attributes.precio;
+    document.getElementById("tienda").innerHTML = productoSeleccionado.attributes.tienda;
+
+};
+
+
+
 getProductos()
 
 

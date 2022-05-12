@@ -1,25 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     <!--Bootsrap 4 CDN-->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seccion</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="iconoproy.jpg" style="border-radius: 50%;">
+    <link rel="icon" type="image/x-icon" href="iconoproy.png">
 </head>
 <body>
-    <div class="encabezado" style="background-color: rgb(23, 126, 104); color:#f3c028"> <img src="iconoproy.jpg" alt="logo" class="logo"> Lista de la compra de Juancar y Cris</div>
+    <div class="encabezado" style="background-color: rgb(23, 126, 104); color:#f3c028"> <img src="iconoproy.png" alt="logo" class="logo"> Lista de la compra de Juancar y Cris</div>
 
 </div>
+
 
 <div class="main-box">
         <div id="lista" class="lista">
         </div>  
 </div>
 
+<div class="modal fade" id="openModalProduct" tabindex="-1" role="dialog" aria-labelledby="addNewProductModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="titleProduct"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
 
-    
+      <div class="modal-body">
+        <img id="img-product" class="img-categorias" alt="Card image cap">
+        <h4>Precio: <span id="precio"></span></h4>
+        <h4>Tienda: <span id="tienda"></span></h4>
+
+       
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" style="background: red;" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" onclick="addNewProduct()">Añadir</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="seccion.js"></script>
 </body>
 </html>

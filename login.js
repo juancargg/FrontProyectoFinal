@@ -13,7 +13,7 @@ async function sendData(form) {
     try {
         const formData = new FormData(form)
         const queryString = new URLSearchParams(formData).toString()
-        const response = await fetch('http://localhost:5432/api/auth/local', {
+        const response = await fetch('https://listacris.herokuapp.com/api/auth/local', {
             method: "POST",
             body: queryString,
             headers: {
