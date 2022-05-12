@@ -28,7 +28,7 @@ async function sendData(form) {
 
         doLogin(data)
     } catch (error) {
-        console.log(error)
+        alert("Credenciales incorrectas, inténtelo de nuevo." );
     }
 }
 

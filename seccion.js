@@ -39,7 +39,12 @@ function printData(dataJSON) {
         // a.classList.add("column")
         img.classList.add("img-categorias")
         p.textContent = productos.nombre
-        img.src = productos.attributes.img_producto
+        
+        if (productos.attributes.img_producto == "") {
+            img.src= "./imgPredet.JPG"
+        }else {
+            img.src = productos.attributes.img_producto
+        }
         console.log(productos)
         img.alt = productos.attributes.nombre
         // price.textContent = `${}`

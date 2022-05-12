@@ -62,6 +62,7 @@ async function addNewProduct() {
             throw new Error(message);
         }
 
+
         const dataResponse = await response.json();
 
         resetProduct(dataResponse)

@@ -31,6 +31,17 @@
     border-radius: 50px;
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 865px;
+    height: 100%;
+}
+
+.main-boxSec {
+    background-image: url('https://img.freepik.com/free-photo/shopping-cart-bright-yellow-paper_113725-1262.jpg?w=1380');
+    background-position: right;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 930px;
     height: 100%;
 }
 
@@ -69,9 +80,8 @@
 }
 
 .logo {
-    border-radius: 100%;
-    height: 45px;
-    text-align: left;
+    height: 60px;
+    align-items : left;
 
 }
 
