@@ -78,9 +78,31 @@ function resetProduct(response) {
 }
 
 
+function search_product() {
+    let input = document.getElementById('search_product').value
+    input = input.toLowerCase();
+    let tienda = document.getElementsByClassName('tienda');
+    let producto = document.getElementsByClassName('producto');
 
+    for (i = 0; i < tienda.length; i++) {
+        if (!tienda[i].innerHTML.toLowerCase().includes(input)) {
+            tienda[i].style.display = "none";
+        }
+        else {
+            tienda[i].style.display = "list-item";
+        }
+    }
+    for (i = 0; i < producto.length; i++) {
+        if (!producto[i].innerHTML.toLowerCase().includes(input)) {
+            producto[i].style.display = "none";
+        }
+        else {
+            producto[i].style.display = "list-item";
+        }
+    }
+}
 
-
+search_product()
 
 
 

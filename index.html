@@ -15,7 +15,7 @@
   <div class="encabezado"> <img src="iconoproy.png" alt="logo" class="logo"> Lista de la compra de Juancar y Cris</div>
 
     <div class="input-box">
-        <input placeholder="Buscar🔎" type="search">
+        <input id="search_product" placeholder="Buscar🔎" type="search">
         <button data-target="#addNewProductModal" data-toggle="modal" class= btn-primary id="myForm" type="button" value="Añadir nuevo">Añadir nuevo</button>            
     </div>
 
@@ -60,11 +60,11 @@
                 <label for="tiendas" class="col-form-label">Tienda:</label>
                 <select name="tienda" type="text" class="form-control" id="tiendas">
                     <option> </option>
-                    <option value="Mercadona">Mercadona</option>
-                    <option value="Lidl">Lidl</option>
-                    <option value="Carrefour">Carrefour</option>
-                    <option value="Dia">Día</option>
-                    <option value="Alcampo">Alcampo</option>
+                    <option class="tienda" value="Mercadona">Mercadona</option>
+                    <option class="tienda" value="Lidl">Lidl</option>
+                    <option class="tienda" value="Carrefour">Carrefour</option>
+                    <option class="tienda" value="Dia">Día</option>
+                    <option class="tienda" value="Alcampo">Alcampo</option>
                   </select>
               </div>
 
@@ -72,15 +72,15 @@
                 <label for="categorias" class="col-form-label">Categoria:</label>
                 <select name="categoria" type="text" class="form-control" id="categorias">
                   <option> </option>
-                  <option value="1">Frutas</option>
-                  <option value="2">Verduras</option>
-                  <option value="3">Panes</option>
-                  <option value="9">Postres</option>
-                  <option value="7">Carne y pescado</option>
-                  <option value="5">Higiene</option>
-                  <option value="6">Limpieza</option>
-                  <option value="4">Lácteos</option>
-                  <option value="8">Menaje</option>
+                  <option class="producto" value="1">Frutas</option>
+                  <option class="producto" value="2">Verduras</option>
+                  <option class="producto" value="3">Panes</option>
+                  <option class="producto" value="9">Postres</option>
+                  <option class="producto" value="7">Carne y pescado</option>
+                  <option class="producto" value="5">Higiene</option>
+                  <option class="producto" value="6">Limpieza</option>
+                  <option class="producto" value="4">Lácteos</option>
+                  <option class="producto" value="8">Menaje</option>
                 </select>
               </div>
 

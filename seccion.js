@@ -4,7 +4,9 @@ const id = urlParams.get("id");
 
 async function getProductos() {
     try {
-        const response = await fetch(`https://listacris.herokuapp.com/api/productos?filters[$and][0][categoria]=` + id);
+        // http://localhost:5432/api/productos?filters[categoria]=7&populate=*
+        // `https://listacris.herokuapp.com/api/productos?filters[$and][0][categoria]=` + id
+        const response = await fetch(`https://listacris.herokuapp.com/api/productos?filters[categoria]=${id}&populate=*`);
         if (!response.ok) {
             const message = `Error: ${response.status}`;
             throw new Error(message);
@@ -51,12 +53,24 @@ function printData(dataJSON) {
 
 function populateModalProduct(event) {
     event.preventDefault();
+
     console.log(productoSeleccionado)
     document.getElementById("titleProduct").innerHTML = productoSeleccionado.attributes.nombre;
     document.getElementById("img-product").src = productoSeleccionado.attributes.img_producto;
-    document.getElementById("precio").innerHTML = productoSeleccionado.attributes.precio;
-    document.getElementById("tienda").innerHTML = productoSeleccionado.attributes.tienda;
+    const datosProductos = document.getElementById("datosProducto")
+    datosProductos.innerHTML = ""
+    // document.getElementById("precio").innerHTML = productoSeleccionado.attributes.precio;
+    // document.getElementById("tienda").innerHTML = productoSeleccionado.attributes.tienda;
+    for (const precioSuper of productoSeleccionado.attributes.precios.data) {
 
+        const tienda = document.createElement("p")
+        console.log(precioSuper)
+
+        tienda.innerHTML = "<b>" + precioSuper.attributes.super + "</b>  - Precio: " + precioSuper.attributes.precio + " €"
+
+
+        datosProductos.appendChild(tienda)
+    }
 };
 
 
